@@ -3,10 +3,12 @@ const multer = require('multer')
 const Photos = require('../models/photos')
 const Admin = require('../models/admin')
 const RealEstate = require('../models/realEstate')
+require('dotenv').config();
+
 
 const s3 = new AWS.S3({
-    accessKeyID: 'AKIAT3CBLEVIZ3VDQRG2',
-    secretAccessKey: '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'
+    accessKeyID: process.env.Aws_Key,
+    secretAccessKey: process.env.Aws_Secret_Key
 })
 
 const upload = multer({ dest: 'uploads/' })

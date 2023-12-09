@@ -1,6 +1,9 @@
+const MessageModel = require('../models/messages');
 const Photos = require('../models/photos');
 const RealEstate = require('../models/realEstate');
 const AWS = require('aws-sdk')
+require('dotenv').config();
+
 
 // const {ObjectId} = require('mongodb')
 // const mongoose = require('mongoose')
@@ -273,8 +276,8 @@ const DeleteCard = async (req, res) => {
 
         for (const photo of PhotosToDelete) {
             const s3 = new AWS.S3({
-                accessKeyID: 'AKIAT3CBLEVIZ3VDQRG2',
-                secretAccessKey: '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'
+                accessKeyID: process.env.Aws_Key,
+                secretAccessKey: process.env.Aws_Secret_Key
             })
             const params = {
                 Bucket: 'test-bucket-ramahi-estate',
@@ -288,6 +291,22 @@ const DeleteCard = async (req, res) => {
         res.status(200).json({ message: 'success deleted' })
     } catch (error) {
         res.status(500).json({ message: 'error deleting realestate and photos', error: error.message })
+    }
+}
+
+const SendMsg = async (req, res) => {
+    try{
+        const {name, email, message} = req.body
+        const newMessage = new MessageModel({
+            name,
+            email,
+            message
+        })
+
+        await newMessage.save()
+        res.json(newMessage)
+    } catch (error) {
+        res.status(500).json({message:'error sending message', error:error.message})
     }
 }
 module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData };
