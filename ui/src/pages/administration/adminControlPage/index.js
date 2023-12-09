@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './AdminControlPage.css'
 import { useNavigate } from "react-router-dom";
+import { GetMessages } from "../../../api";
 const AdminControlPage = () => {
     const navigate = useNavigate();
+    const [messages, setMessages] = useState([])
 
-    return(
+    useEffect(() => {
+        const pageSize = 3;
+        GetMessages(pageSize).then((msg) => {
+            setMessages(msg.data)
+            console.log(msg)
+        }).catch((error) => {
+            console.error(error)
+        })
+    }, [])
+
+    const convertCreatedAt = (createdAt) => {
+        const dateObject = new Date(createdAt)
+        return dateObject.toLocaleDateString() + '' + dateObject.toLocaleTimeString()
+    }
+    return (
         <div className="admin-control-div">
             <div className="messages-div">
-                <button className="messages-btn">See All Messages</button>
+                <button className="messages-btn" onClick={() => navigate('/admineditinfo/allmessages')}>See All Messages</button>
                 <div className="messages-list">
-                    <div className="single-message">
+                    {
+                        messages?.map((message, idx) => (
+                            <div className="single-message" key={idx}>
+                                <span>Time: {convertCreatedAt(message.createdAt)}</span>
+                                <hr/>
+                                <span>{message.message.length > 50 ? `${message.message.slice(0, 50)}...` : message.message}</span>
+                            </div>
+                        ))
+                    }
+
+                    {/* <div className="single-message">
                         <span>message firts texts, asdf asdf asdaf assdf asdsf</span>
                     </div>
                     <div className="single-message">
@@ -17,7 +43,7 @@ const AdminControlPage = () => {
                     </div>
                     <div className="single-message">
                         <span>message firts texts, asdf asdf asdaf assdf asdsf</span>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className="edit-data">

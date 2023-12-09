@@ -12,6 +12,7 @@ import AddData from "../pages/administration/addData";
 import EditData from "../pages/administration/editData";
 import AddPhotos from "../pages/administration/addPhotos";
 import EditInfo from "../pages/administration/editInfo";
+import AllMessages from "../pages/administration/allMessages";
 
 const Router = 
     createBrowserRouter([
@@ -66,6 +67,10 @@ const Router =
                 {
                     path:'/admineditinfo/:id',
                     element:<EditInfo/>
+                },
+                {
+                    path:'/admineditinfo/allmessages',
+                    element:<AllMessages/>
                 }
             ]
         }

@@ -182,3 +182,25 @@ export const UiGetData = async (data) => {
         console.error(error)
     }
 }
+
+export const SendMsg = async (data) => {
+    try{
+        const response = await api.post('/data/messages', data)
+        return response
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+export const GetMessages = async (pageSize) => {
+    try{
+        const response = await api.get('/data/getmsgs',
+        {params:{
+            pageSize: pageSize
+        }}
+        )
+        return response
+    } catch (error) {
+        console.log(error)
+    }
+}
