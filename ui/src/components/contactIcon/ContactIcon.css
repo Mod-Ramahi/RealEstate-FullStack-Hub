@@ -1,0 +1,27 @@
+.contact-icon-div{
+    position: fixed;
+    top: 40rem;
+    right: 3rem;
+    z-index: 5;
+    width: 6rem;
+    height: 6rem;
+    background-color: rgb(31, 121, 21);
+    border: 2px solid rgb(226, 80, 80);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:800px){
+    .contact-icon-div{
+        top: 80%;
+        width: 4rem;
+        height: 4rem;
+    }
+    .img-icon{
+        width: 70%;
+        height: 70%;
+    }
+}

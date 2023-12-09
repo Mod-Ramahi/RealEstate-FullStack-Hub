@@ -1,0 +1,145 @@
+.search-container {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to left, rgb(34, 73, 19), rgb(28, 74, 97));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-area {
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 98%;
+    border-radius: 8px;
+    background-color: white;
+    /* height: 20rem; */
+}
+
+.main-options {
+    width: 97%;
+    margin: 1rem 0;
+}
+
+.nav-linkk {
+    /* color: rgb(34, 73, 19) */
+    color: rgb(87, 143, 116);
+    display: flex;
+    gap: 3px;
+}
+
+.nav-linkk:hover {
+    color: rgb(50, 124, 20)
+}
+
+.nav-linkk.active {
+    color: white !important;
+    background-color: rgb(34, 73, 19) !important;
+}
+
+.filter-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.filter-buttons {
+    background-color: rgb(34, 73, 19);
+    border: 1px solid black;
+    width: 12rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.filter-buttons:hover {
+    background-color: rgb(43, 101, 20);
+    border: 1px solid rgb(25, 173, 19);
+
+}
+
+.filter-buttons-two {
+    background-color: white;
+    border: 2px solid rgb(34, 73, 19);
+    color: rgb(34, 73, 19);
+    width: 12rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.result-area {
+    /* width: 100%; */
+    margin: 0.3rem;
+    border: 2px solid rgb(34, 73, 19);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 1.3rem;
+    border-radius: 4px;
+    background-color: rgb(246, 255, 245);
+}
+.reset-btn-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.results-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding: 1rem;
+}
+@media only screen and (max-width:1600px) {
+    .result-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width:1200px) {
+    .result-area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media only screen and (max-width:990px) {
+    .search-h1 {
+        font-size: 1rem;
+    }
+
+    .filter-options {
+        gap: 4px;
+    }
+
+    .filter-buttons-two {
+        background-color: white;
+        border: 2px solid rgb(34, 73, 19);
+        color: rgb(34, 73, 19);
+        width: auto;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .filter-buttons {
+        max-width: 8rem;
+        font-size: 12px;
+    }
+
+    .result-area {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+}

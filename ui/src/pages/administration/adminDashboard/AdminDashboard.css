@@ -1,0 +1,67 @@
+.admin-container{
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+.control-buttons{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: rgb(246, 255, 245);
+    border: 1px solid black;
+    border-radius: 4px;
+    gap: 1rem;
+}
+.control-buttons-span{
+    font-size: 2rem;
+    color: black;
+}
+.admin-hr{
+    border: 2px solid black;
+    width: 100%;
+}
+.control-buttons-btn{
+    width: 10rem;
+    height: 3rem;
+    color: black;
+    background-color: rgb(216, 216, 216);
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.add-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create-admin{
+    margin: 0.5rem;
+}
+.showPass-btn{
+    background-color: white;
+    border-radius: 4px;
+}
+.add-admin-btn{
+    width: 90%;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.admins-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width:50%;
+}
+.single-admin{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    border: 1px solid black;
+    padding: 1rem;
+}

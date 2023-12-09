@@ -1,0 +1,13 @@
+.footer-div{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    margin-bottom: 0;
+}
+.footer-span{
+    color: white;
+    font-size: 10px;
+}

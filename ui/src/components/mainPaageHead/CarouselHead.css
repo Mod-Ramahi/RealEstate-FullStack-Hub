@@ -1,0 +1,13 @@
+.carousel{
+    margin-top: 4.5rem;
+}
+.img-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img{
+    width: 100%;
+    height: 80vh;
+}

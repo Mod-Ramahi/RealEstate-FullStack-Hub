@@ -1,0 +1,66 @@
+.edit-container{
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.edit-buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+.search-div{
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+}
+span{
+    font-size: 1rem;
+}
+.sort-div{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width:100%
+}
+.sort-btn{
+    width: 10rem;
+}
+.type-div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.result-container{
+    width: 100%;
+    margin: 2rem;
+    border: 2px solid black;
+    padding: 2rem;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:3rem
+}
+.card-body-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.btn{
+    width: 12rem;
+}
+.pagination-btns{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}

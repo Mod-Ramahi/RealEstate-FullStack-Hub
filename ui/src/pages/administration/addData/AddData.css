@@ -1,0 +1,89 @@
+.add-container{
+    margin-top: 10rem;
+}
+.add-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+.add-info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 4rem;
+}
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+.head-span{
+    font-size: 1rem;
+}
+.select{
+    width: 30%;
+}
+.select-input{
+    width: 30%;
+}
+.section-hr{
+    border: 2px solid black;
+    width: 100%;
+}
+.additional-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem
+}
+.other-span{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.add-details{
+    padding: 2rem;
+    border: 2px solid black;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem
+}
+.text-area{
+    resize: none;
+}
+.bold-span{
+    font-weight: bold;
+}
+.rank{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+.save-btn{
+    background-color: rgb(205, 216, 207);
+    border: 2px solid black;
+    box-shadow: 2px 2px 3px rgb(119, 118, 118);
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+}

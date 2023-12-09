@@ -1,0 +1,51 @@
+{
+    "contactBtn":"Contact us",
+    "aboutBtn":"About us",
+    "cardTitles": [
+        "Trusted",
+        "To Help You",
+        "Your options"
+    ],
+    "cardText":[
+        "trusted company, customer satisfaction. know more...",
+        "happy to help you and answer all your questions",
+        "you'll find what you looking for, we have alot of options"
+    ],
+    "searchTitle":"Search options",
+    "searchSection1":"Sale",
+    "searchSection2":"Rent",
+    "searchSection3":"commercial",
+    "locationMenu":"Location",
+    "locationOptions":[
+        "Abdoun",
+        "Al Abdali",
+        "7th circle",
+        "Others"
+    ],
+    "typeMenu":"Properity type",
+    "typeOptions":[
+        "Apartments",
+        "Villas",
+        "Studios",
+        "Buildings",
+        "Farms",
+        "Lands"
+    ],
+    "areaMenu":"Min-Max Area",
+    "priceMenu":"Price range",
+    "floorMenu":"Floor",
+    "roofOption":"Roof",
+    "roomsMenu":"rooms",
+    "furnishingMenu":"Furnishing type",
+    "furnishingOption1":"Furnished",
+    "furnishingOption2":"Unfurnished",
+    "contactUs":"YOU CAN CONTACT US USING THE PHONE NUMBERS. OR FILL THE FORM WITH YOUR MESSAGE AND WE'LL GET BACK TO YOU AS SOON AS POSSIBLE.",
+    "contactNo":"Phone number:",
+    "contactWtp":"Whats App number:",
+    "contactEmail":"Email",
+    "contactForm":"FILL THE FORM TO SEND A MESSAGE",
+    "formName":"Your Name:",
+    "formEmail":"Your Email:",
+    "formMsg":"Your Message:",
+    "formsubmit":"Send"
+}

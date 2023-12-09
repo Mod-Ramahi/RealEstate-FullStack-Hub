@@ -1,0 +1,45 @@
+.cards-div{
+    margin: 1rem 0;
+    padding: 1rem 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+}
+.card-box{
+    min-height: 30rem;
+    border: 2px solid green;
+    box-shadow: 2px 2px 4px black;
+}
+.card-img{
+    height: 6.5rem;
+}
+
+.card-button{
+    background: linear-gradient(to left, rgb(34, 73, 19), rgb(28, 74, 97));
+    color:white;
+    font-weight: bold;
+    border:1px solid black;
+    box-shadow: 2px 2px 3px rgb(2, 114, 110);
+}
+.card-text{
+    min-height: 3rem;
+}
+.card-button:hover{
+    background: linear-gradient(to right, rgb(42, 91, 23), rgb(31, 83, 109));
+}
+.main-hr{
+    margin:1em;
+    border:2px solid rgb(42, 91, 23);
+
+}
+@media only screen and (max-width:850px){
+    .card-button{
+        width: 100%;
+    }
+    .card-text{
+        font-size: 13px;
+    }
+    
+}

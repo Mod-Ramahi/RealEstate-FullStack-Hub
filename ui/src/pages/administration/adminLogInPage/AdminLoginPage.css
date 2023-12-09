@@ -1,0 +1,15 @@
+.login-div{
+    margin-top: 5rem;
+    width: 100%;
+    margin-bottom: 25rem;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.admin-input{
+    width: 70%;
+}

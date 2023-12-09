@@ -1,0 +1,68 @@
+.my-edit-navbar {
+    background: linear-gradient(to left, rgb(34, 73, 19), rgb(28, 74, 97));
+    height: 4.8em;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+
+}
+
+.container {
+    margin-left: 2rem;
+    margin-right: 1rem;
+    width: 100%;
+}
+
+.logo {
+    height: 3.2rem;
+    width: 7rem;
+}
+
+.me-auto {
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-link {
+    min-width: 7rem;
+    text-align: center;
+    /* margin-right: 1rem; */
+    margin: 0 1rem ;
+    padding: 1rem 2rem;
+    background-color: rgb(34, 73, 19);
+    color: white;
+    border: 1px solid rgb(246, 255, 245);
+    border-radius: 5px;
+
+}
+.translation-btn{
+    text-align: center;
+    margin: 0 1rem ;
+    padding: 1rem 2rem;
+    background-color: rgb(50, 98, 31);
+    color: white;
+    border: 1px solid rgb(246, 255, 245);
+    border-radius: 5px;
+
+}
+
+
+#responsive-navbar-nav {
+    width: 100%;
+    /* margin-right: 1rem; */
+    color: black;
+}
+
+.collapse {
+    /* margin-right: 1rem; */
+    margin-left: 18rem;
+    color: black;
+}
+
+.navbar-collapse {
+    /* width: 10rem; */
+    /* background-color: red; */
+}
