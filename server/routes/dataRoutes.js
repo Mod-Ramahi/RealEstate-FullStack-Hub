@@ -1,4 +1,4 @@
-const {AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData} = require('../controller/dataController')
+const {AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData, SendMsg, GetMessages} = require('../controller/dataController')
 const authMiddleware = require('../middleware')
 
 const DataRoute = require('express').Router()
@@ -10,5 +10,7 @@ DataRoute.post('/photolink/:id', SaveImgUrl)
 DataRoute.put('/updateinfo/:id', authMiddleware, UpdateRealEstateInfo)
 DataRoute.delete('/deletecard/:id', authMiddleware, DeleteCard)
 DataRoute.post('/uigetdata', UiGetData)
+DataRoute.post('/messages', SendMsg)
+DataRoute.get('/getmsgs', GetMessages)
 
 module.exports = DataRoute

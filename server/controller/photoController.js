@@ -7,7 +7,7 @@ require('dotenv').config();
 
 
 const s3 = new AWS.S3({
-    accessKeyID: process.env.Aws_Key,
+    accessKeyId: process.env.Aws_Key,
     secretAccessKey: process.env.Aws_Secret_Key
 })
 

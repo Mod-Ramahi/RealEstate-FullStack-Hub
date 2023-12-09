@@ -276,7 +276,7 @@ const DeleteCard = async (req, res) => {
 
         for (const photo of PhotosToDelete) {
             const s3 = new AWS.S3({
-                accessKeyID: process.env.Aws_Key,
+                accessKeyId: process.env.Aws_Key,
                 secretAccessKey: process.env.Aws_Secret_Key
             })
             const params = {
@@ -309,4 +309,20 @@ const SendMsg = async (req, res) => {
         res.status(500).json({message:'error sending message', error:error.message})
     }
 }
-module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData };
+
+const GetMessages = async (req, res) => {
+    try{
+        const {pageSize} = req.query
+        const limit = pageSize
+
+        let query = MessageModel.find().sort({createdAt : -1})
+        if(pageSize === 3) {
+            query = query.limit(limit)
+        }
+        const Msgs = await query
+        res.json(Msgs)
+    } catch(error) {
+        res.status(500).json({message:'error getting messages', error:error.message})
+    }
+}
+module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData, SendMsg, GetMessages };
