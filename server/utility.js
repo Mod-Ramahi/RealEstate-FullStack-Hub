@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jose');
 
 const generateToken = async (payload, options) => {
     return new Promise((resolve, reject) => {

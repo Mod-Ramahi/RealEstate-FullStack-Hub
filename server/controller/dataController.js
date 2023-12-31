@@ -80,7 +80,7 @@ const GetData = async (req, res) => {
                 { 'titleAr': { $regex: textPattern } },
                 { 'titleEn': { $regex: textPattern } }
 
-                // $where is not supported / allowed for this mongoose atlas tier
+                // $where is not supported/allowed for this mongoose atlas tier
                 // ,
                 // {
                 //     $where: function() {
