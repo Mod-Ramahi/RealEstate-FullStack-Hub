@@ -9,16 +9,17 @@ require("dotenv").config()
 
 const app = express();
 const PORT = process.env.PORT||5000;
-app.use(cors());
+app.use(cors({credentials: true}));
 app.use(bodyParser.json());
 
-// const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app';
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Origin', originAllowed)
-//     res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
-//     res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization')
-//     next()
-// });
+const originAllowed = '*';
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', originAllowed)
+    res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
+    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization')
+    Credential: true
+    next()
+});
 app.use([
     compression(),
     express.json(),
