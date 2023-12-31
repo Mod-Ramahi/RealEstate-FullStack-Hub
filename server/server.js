@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === 'development'){
 
 };
 
-app.use('/api/v1', router)
+app.use('https://real-estate-mern-full-stack-ui.vercel.app/', router)
 const mongooseUrl = process.env.Mongoose_Url;
 mongoose.connect(mongooseUrl, {
     useNewUrlParser:true,
