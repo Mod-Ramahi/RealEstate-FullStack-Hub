@@ -31,7 +31,7 @@ if(process.env.NODE_ENV === 'development'){
 };
 
 app.use('/api/v1', router)
-const mongooseUrl = "mongodb+srv://dbfreelancer:4Dt8qrkl1p2ZOsXt@freelancerdb.5jr23io.mongodb.net/RealEstateDb";
+const mongooseUrl = process.env.Mongoose_Url;
 mongoose.connect(mongooseUrl, {
     useNewUrlParser:true,
     useUnifiedTopology:true,
