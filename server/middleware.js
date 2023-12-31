@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken')
+const jwt = require('jose')
 const {verifyToken} = require('./utility')
 
 const authMiddleware = async (req, res, next) => {
