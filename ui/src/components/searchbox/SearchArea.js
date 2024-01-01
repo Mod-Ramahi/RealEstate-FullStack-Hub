@@ -4,7 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import ResultCard from "../resultCard/ResultCard";
 import './Search.css';
 import { useTranslation } from "react-i18next";
-import { UiGetData } from "../../api";
+import { UiGetData, test } from "../../api";
 import { useNavigate } from "react-router-dom";
 
 const SearchArea = () => {
@@ -30,6 +30,11 @@ const SearchArea = () => {
         if (currentPage === 1) {
             setPreviousButton(false)
         }
+        test().then((res)=>{
+            console.log(res)
+        }).catch((err) => {
+            console.error(err)
+        })
         const data = { category, location, type, area, price, floor, rooms, furnishing, currentPage }
         UiGetData(data).then((uiData) => {
             const recievedData = uiData.data

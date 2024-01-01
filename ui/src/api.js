@@ -39,7 +39,7 @@ export const SignIn = async (data) => {
     }
 }
 
-export const test = async () {
+export const test = async () => {
     try {
         const response = await api.get('/data/test')
         return response
