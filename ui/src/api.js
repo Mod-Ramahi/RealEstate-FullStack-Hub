@@ -176,7 +176,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await api.post('https://real-estate-mern-full-stack-server.vercel.app/data/uigetdata', data)
+        const response = await api.post('https://real-estate-mern-full-stack-server.vercel.app/data/uigetdata', data, {credential: true})
         return response
     } catch (error) {
         console.error(error)
