@@ -12,7 +12,7 @@ const PORT = process.env.PORT||5000;
 app.use(cors({credentials: true}));
 app.use(bodyParser.json());
 
-const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app';
+const originAllowed = '*';
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', originAllowed)
     res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === 'development'){
 
 };
 
-app.use('/', router)
+app.use('https://real-estate-mern-full-stack-ui.vercel.app', router)
 const mongooseUrl = process.env.Mongoose_Url;
 mongoose.connect(mongooseUrl, {
     useNewUrlParser:true,
