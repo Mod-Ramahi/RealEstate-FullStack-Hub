@@ -2,13 +2,13 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const api = axios.create({
-    baseURL: ''
+    baseURL: 'https://real-estate-mern-full-stack-server.vercel.app'
 })
 
 export const RegisterAdmin = async (data) => {
     try {
         const token = getItem()
-        const response = await api.post('https://real-estate-mern-full-stack-server.vercel.app/administration/createadmin',
+        const response = await api.post('/administration/createadmin',
             data,
             { headers: { Authorization: `Bearer ${token}` } })
         return response
@@ -176,7 +176,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await api.post('https://real-estate-mern-full-stack-server.vercel.app/data/uigetdata', data, {credentials: true})
+        const response = await api.post('/data/uigetdata', data, {credentials: true})
         return response
     } catch (error) {
         console.error('the error',error)
