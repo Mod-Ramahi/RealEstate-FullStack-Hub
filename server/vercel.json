@@ -1,11 +1,5 @@
 {
     "version": 2,
-    "builds": [
-      {
-        "src": "./server.js",
-        "use": "@vercel/node"
-      }
-    ],
     "routes": [
       {
         "src": "https://real-estate-mern-full-stack-ui.vercel.app/(.*)",

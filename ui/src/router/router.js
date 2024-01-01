@@ -24,10 +24,10 @@ const Router =
                     path:'/',
                     element: <HomePage/>
                 },
-                // {
-                //     path:'*',
-                //     element:<HomePage/>
-                // },
+                {
+                    path:'*',
+                    element:<HomePage/>
+                },
                 {
                     path:'/details/:id',
                     element:<SinglePageDetails/>
