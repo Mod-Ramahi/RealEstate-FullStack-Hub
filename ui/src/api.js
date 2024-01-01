@@ -39,6 +39,16 @@ export const SignIn = async (data) => {
     }
 }
 
+export const test = async () {
+    try {
+        const response = await api.get('/data/test')
+        return response
+    }
+    catch (error){
+        console.error(error)
+    }
+}
+
 export const AddRealEstate = async (data) => {
     try {
         const token = getItem()

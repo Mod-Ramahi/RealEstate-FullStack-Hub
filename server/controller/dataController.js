@@ -325,4 +325,8 @@ const GetMessages = async (req, res) => {
         res.status(500).json({message:'error getting messages', error:error.message})
     }
 }
-module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData, SendMsg, GetMessages };
+const TestMe = async (req, res) => {
+    res.json('hello')
+    console.log('interaction works')
+}
+module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData, SendMsg, GetMessages, TestMe };
