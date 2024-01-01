@@ -41,7 +41,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await api.get('/data/test')
+        const response = await api.get('/data/test/' ,{withCredentials:true})
         return response
     }
     catch (error){
