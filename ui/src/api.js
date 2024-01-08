@@ -13,20 +13,8 @@ export const RegisterAdmin = async (data) => {
             { headers: { Authorization: `Bearer ${token}` } })
         return response
     } catch (error) {
-        if (error.response) {
-            // The request was made and the server responded with a status code
-            // that falls out of the range of 2xx
-            console.error(error.response.data);
-            console.error(error.response.status);
-            console.error(error.response.headers);
-        } else if (error.request) {
-            // The request was made but no response was received
-            console.error(error.request);
-        } else {
-            // Something happened in setting up the request that triggered an Error
             console.error('Error', error.message);
         }
-    }
 }
 
 export const SignIn = async (data) => {
@@ -41,7 +29,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await api.get('/data/test' ,{withCredentials:true})
+        const response = await api.get('/' ,{withCredentials:true})
         return response
     }
     catch (error){
