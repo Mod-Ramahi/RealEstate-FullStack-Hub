@@ -29,7 +29,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await api.get('/data/test' ,{withCredentials:true})
+        const response = await api.get('/data/test/' ,{withCredentials:true})
         return response
     }
     catch (error){
@@ -174,7 +174,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await api.post('/data/uigetdata', data, {withCredentials: true})
+        const response = await api.post('/data/uigetdata/', data, {withCredentials: true})
         return response
     } catch (error) {
         console.error('the error',error)
