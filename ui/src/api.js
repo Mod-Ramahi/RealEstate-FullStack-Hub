@@ -1,14 +1,14 @@
 import axios from "axios";
 import { getItem } from "./localStorage";
 
-const api = axios.create({
-    baseURL: 'https://real-estate-mern-full-stack-server.vercel.app'
-})
+// const api = axios.create({
+//     baseURL: 'https://real-estate-mern-full-stack-server.vercel.app'
+// })
 
 export const RegisterAdmin = async (data) => {
     try {
         const token = getItem()
-        const response = await api.post('/administration/createadmin',
+        const response = await axios.post('/administration/createadmin',
             data,
             { headers: { Authorization: `Bearer ${token}` } })
         return response
@@ -19,7 +19,7 @@ export const RegisterAdmin = async (data) => {
 
 export const SignIn = async (data) => {
     try {
-        const response = await api.post('/administration/signin', data)
+        const response = await axios.post('/administration/signin', data)
         return response
     } catch (error) {
         console.error(error)
@@ -29,7 +29,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await api.get('/data/test/' ,{withCredentials:true})
+        const response = await axios.get('https://real-estate-server-app.vercel.app/data/test/' ,{withCredentials:true})
         return response
     }
     catch (error){
@@ -40,7 +40,7 @@ export const test = async () => {
 export const AddRealEstate = async (data) => {
     try {
         const token = getItem()
-        const response = await api.post('/data/adddata',
+        const response = await axios.post('/data/adddata',
             data,
             {
                 headers: {
@@ -57,7 +57,7 @@ export const AddRealEstate = async (data) => {
 export const GetDefaultData = async (pageSize, currentPage, textSearch, sort, order, section) => {
     try {
         const token = getItem()
-        const response = await api.get('/data/getdata',
+        const response = await axios.get('/data/getdata',
             {
                 headers: { Authorization: `Bearer ${token}` },
                 params: {
@@ -78,7 +78,7 @@ export const GetDefaultData = async (pageSize, currentPage, textSearch, sort, or
 
 export const GetSingleData = async (id) => {
     try {
-        const response = await api.get(`/data/getsingle/${id}`)
+        const response = await axios.get(`/data/getsingle/${id}`)
         return response
     } catch (error) {
         console.error(error)
@@ -89,7 +89,7 @@ export const GetSingleData = async (id) => {
 export const AddPhoto = async (formData, id) => {
     try {
         const token = getItem()
-        const response = await api.post(`/photo/addphoto/${id}`, formData,
+        const response = await axios.post(`/photo/addphoto/${id}`, formData,
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -106,7 +106,7 @@ export const AddPhoto = async (formData, id) => {
 
 export const SaveImgUrl = async (data, id) => {
     try {
-        const response = await api.post(`/data/photolink/${id}`, data)
+        const response = await axios.post(`/data/photolink/${id}`, data)
         return response
     } catch (error) {
         console.error(error)
@@ -117,9 +117,9 @@ export const SaveImgUrl = async (data, id) => {
 export const DeletePhoto = async (data) => {
     try{
         // const token = getItem()
-        // console.log('api token', token)
+        // console.log('axios token', token)
         const {link, token} = data
-        const response = await api.delete('/photo/deletephoto', 
+        const response = await axios.delete('/photo/deletephoto', 
         {data:{link}, 
         headers: {Authorization: `Bearer ${token}`}})
         return response
@@ -132,7 +132,7 @@ export const DeletePhoto = async (data) => {
 export const UpdateInfo = async (data, id) => {
     try{
         const token = getItem()
-        const response = await api.put(`/data/updateinfo/${id}`, data, {headers: {Authorization: `Bearer ${token}`}})
+        const response = await axios.put(`/data/updateinfo/${id}`, data, {headers: {Authorization: `Bearer ${token}`}})
         return response
     } catch(error){
         console.error(error)
@@ -143,7 +143,7 @@ export const UpdateInfo = async (data, id) => {
 export const DeleteCard = async (id) => {
     try{
         const token = getItem()
-        const response = await api.delete(`/data/deletecard/${id}`, {headers: {Authorization: `Bearer ${token}`}})
+        const response = await axios.delete(`/data/deletecard/${id}`, {headers: {Authorization: `Bearer ${token}`}})
         return response
     } catch(error) {
         console.error(error)
@@ -153,7 +153,7 @@ export const DeleteCard = async (id) => {
 
 export const GetAllAdmins = async () => {
     try{
-        const response = await api.get('/administration/getalladmins')
+        const response = await axios.get('/administration/getalladmins')
         return response
     } catch(error){
         console.error(error)
@@ -164,7 +164,7 @@ export const GetAllAdmins = async () => {
 export const DeleteAdmin = async (id) => {
     try{
         const token = getItem()
-        const response = await api.delete(`/administration/deleteadmin/${id}`, {headers:{Authorization:`Bearer ${token}`}})
+        const response = await axios.delete(`/administration/deleteadmin/${id}`, {headers:{Authorization:`Bearer ${token}`}})
         return response
     } catch (error) {
         console.error(error)
@@ -174,7 +174,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await api.post('/data/uigetdata/', data, {withCredentials: true})
+        const response = await axios.post('https://real-estate-server-app.vercel.app/data/uigetdata/', data, {withCredentials: true})
         return response
     } catch (error) {
         console.error('the error',error)
@@ -184,7 +184,7 @@ export const UiGetData = async (data) => {
 
 export const SendMsg = async (data) => {
     try{
-        const response = await api.post('/data/messages', data)
+        const response = await axios.post('/data/messages', data)
         return response
     } catch (error) {
         console.error(error)
@@ -193,7 +193,7 @@ export const SendMsg = async (data) => {
 
 export const GetMessages = async (pageSize) => {
     try{
-        const response = await api.get('/data/getmsgs',
+        const response = await axios.get('/data/getmsgs',
         {params:{
             pageSize: pageSize
         }}
