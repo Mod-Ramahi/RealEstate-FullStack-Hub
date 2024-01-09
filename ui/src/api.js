@@ -29,7 +29,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await axios.get('https://real-estate-server-app.vercel.app/data/test/' ,{withCredentials:true})
+        const response = await axios.get('https://real-estate-server-app.vercel.app/data/test')
         return response
     }
     catch (error){
