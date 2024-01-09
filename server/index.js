@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 //     next();
 // });
 
-const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app/';
+const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app';
 app.use(cors({
     origin: originAllowed,
     methods: ['HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE'],
