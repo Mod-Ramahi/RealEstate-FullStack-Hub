@@ -175,7 +175,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await instance.post('/data/uigetdata/', data, {withCredentials: true})
+        const response = await instance.post('/data/uigetdata', data, {withCredentials: true})
         return response
     } catch (error) {
         console.error('the error',error)
