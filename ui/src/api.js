@@ -3,7 +3,7 @@ import { getItem } from "./localStorage";
 
 const instance = axios.create({
     baseURL: 'https://real-estate-server-app.vercel.app/api/v1',
-    withCredentials: true
+    // withCredentials: true
 })
 
 export const RegisterAdmin = async (data) => {
@@ -30,7 +30,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await instance.get('/data/test' ,{withCredentials:true})
+        const response = await instance.get('/data/test')
         return response
     }
     catch (error){
@@ -175,7 +175,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await instance.post('/data/uigetdata', data, {withCredentials: true})
+        const response = await instance.post('/data/uigetdata', data)
         return response
     } catch (error) {
         console.error('the error',error)
