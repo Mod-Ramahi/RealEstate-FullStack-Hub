@@ -10,30 +10,26 @@ require("dotenv").config()
 const app = express();
 const PORT = process.env.PORT||5000;
 app.use(cors());
-app.options("/", (req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "https://real-estate-mern-full-stack-ui.vercel.app");
-    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    res.sendStatus(204);
-  });
+// app.options("/", (req, res) => {
+//     res.setHeader("Access-Control-Allow-Origin", "https://real-estate-mern-full-stack-ui.vercel.app");
+//     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+//     res.sendStatus(204);
+//   });
 
 app.use(bodyParser.json());
-// app.use(cors({origin: 'https://real-estate-mern-full-stack-ui.vercel.app/' }));
-// app.use((req, res, next) => {
+app.use(cors({origin: 'https://real-estate-mern-full-stack-ui.vercel.app/' }));
+app.use((req, res, next) => {
 //   res.setHeader('Access-Control-Allow-Credentials', true)
 //   res.setHeader('Access-Control-Allow-Origin', '*')
-//   res.setHeader('Access-Control-Allow-Origin',origin);
-//   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-//   res.setHeader(
-//     'Access-Control-Allow-Headers',
-//     'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-//   )
-//     if (req.method === 'OPTIONS') {
-//         res.status(200).end()
-//         return
-//       }
-//     next();
-// });
+  res.setHeader('Access-Control-Allow-Origin',origin);
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  )
+    next();
+});
 
 // const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app/';
 // app.use(cors({
