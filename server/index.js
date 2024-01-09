@@ -61,7 +61,7 @@ if(process.env.NODE_ENV === 'development'){
 
 };
 
-app.use('/api/v1/', router)
+app.use('/', router)
 // app.get('/', (req, res) => {
 //     console.log('check test route')
 //     res.send('check test route response')
