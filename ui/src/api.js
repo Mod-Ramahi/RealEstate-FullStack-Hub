@@ -174,7 +174,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await axios.post('https://real-estate-server-app.vercel.app/data/uigetdata/', data, {withCredentials: true})
+        const response = await axios.post('https://real-estate-server-app.vercel.app/data/uigetdata/', data)
         return response
     } catch (error) {
         console.error('the error',error)
