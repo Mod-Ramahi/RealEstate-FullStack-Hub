@@ -2,7 +2,7 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const instance = axios.create({
-    baseURL: 'https://real-estate-mern-full-stack-server.vercel.app/api/v1'
+    baseURL: 'https://real-estate-server-app.vercel.app/api/v1'
 })
 
 export const RegisterAdmin = async (data) => {
