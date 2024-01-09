@@ -9,7 +9,7 @@ require("dotenv").config()
 
 const app = express();
 const PORT = process.env.PORT||5000;
-app.use(cors());
+// app.use(cors());
 // app.options("/", (req, res) => {
 //     res.setHeader("Access-Control-Allow-Origin", "https://real-estate-mern-full-stack-ui.vercel.app");
 //     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
