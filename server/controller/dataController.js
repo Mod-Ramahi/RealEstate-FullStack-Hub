@@ -107,24 +107,24 @@ const UiGetData = async (req, res) => {
         let query = RealEstate.find().sort({ rank: 1, createdAt: -1 }).skip(skip)
 
         if (category) {
-          query = query.where('category').equals(category)
+            query = query.where('category').equals(category)
         }
         if (location && location !== 'All') {
-            if(location === 'عبدون') {
+            if (location === 'عبدون') {
                 query = query.where('location').equals('abdoun')
             } else
-            if(location === 'العبدلي') {
-                query = query.where('location').equals('alabdali')
-            } else
-            if(location === 'الدوار السابع') {
-                query = query.where('location').equals('7thcircle')
-            } else
-            if(location === 'غير ذلك') {
-                query = query.where('location').equals('others')
-            } else {
-                const editedLocation = location.toLowerCase().replace(/\s/g, '')
-                query = query.where('location').equals(editedLocation)
-            }
+                if (location === 'العبدلي') {
+                    query = query.where('location').equals('alabdali')
+                } else
+                    if (location === 'الدوار السابع') {
+                        query = query.where('location').equals('7thcircle')
+                    } else
+                        if (location === 'غير ذلك') {
+                            query = query.where('location').equals('others')
+                        } else {
+                            const editedLocation = location.toLowerCase().replace(/\s/g, '')
+                            query = query.where('location').equals(editedLocation)
+                        }
         }
         if (type) {
             if (type === 'شقق') {
@@ -295,8 +295,8 @@ const DeleteCard = async (req, res) => {
 }
 
 const SendMsg = async (req, res) => {
-    try{
-        const {name, email, message} = req.body
+    try {
+        const { name, email, message } = req.body
         const newMessage = new MessageModel({
             name,
             email,
@@ -306,27 +306,32 @@ const SendMsg = async (req, res) => {
         await newMessage.save()
         res.json(newMessage)
     } catch (error) {
-        res.status(500).json({message:'error sending message', error:error.message})
+        res.status(500).json({ message: 'error sending message', error: error.message })
     }
 }
 
 const GetMessages = async (req, res) => {
-    try{
-        const {pageSize} = req.query
+    try {
+        const { pageSize } = req.query
         const limit = pageSize
 
-        let query = MessageModel.find().sort({createdAt : -1})
-        if(pageSize === 3) {
+        let query = MessageModel.find().sort({ createdAt: -1 })
+        if (pageSize === 3) {
             query = query.limit(limit)
         }
         const Msgs = await query
         res.json(Msgs)
-    } catch(error) {
-        res.status(500).json({message:'error getting messages', error:error.message})
+    } catch (error) {
+        res.status(500).json({ message: 'error getting messages', error: error.message })
     }
 }
 const TestMe = async (req, res) => {
-    res.json('hello')
-    console.log('interaction works')
+    try {
+        res.json('hello')
+        console.log('interaction works')
+    } catch (error) {
+        res.status(500).json({ message: 'error getting messages', error: error.message })
+    }
+
 }
 module.exports = { AddData, GetData, GetSingleData, SaveImgUrl, UpdateRealEstateInfo, DeleteCard, UiGetData, SendMsg, GetMessages, TestMe };
