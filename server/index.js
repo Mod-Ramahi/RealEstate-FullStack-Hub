@@ -9,7 +9,7 @@ require("dotenv").config()
 
 const app = express();
 const PORT = process.env.PORT||5000;
-// app.use(cors());
+app.use(cors());
 // app.options("/", (req, res) => {
 //     res.setHeader("Access-Control-Allow-Origin", "https://real-estate-mern-full-stack-ui.vercel.app");
 //     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT");
@@ -32,24 +32,24 @@ app.use(bodyParser.json());
 // });
 
 const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app';
-app.use(cors({
-    origin: originAllowed,
-    methods: ['HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true,
-  }));
+// app.use(cors({
+//     origin: originAllowed,
+//     methods: ['HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE'],
+//     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+//     credentials: true,
+//   }));
 
-// app.use((req, res, next) => {
-//     res.header('Access-Control-Allow-Credentials', true)
-//     res.header('Access-Control-Allow-Origin', originAllowed)
-//     res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
-//     res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization')
-//     res.header(
-//         'Access-Control-Allow-Headers',
-//         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-//       )
-//     next()
-// });
+app.use((req, res, next) => {
+    // res.header('Access-Control-Allow-Credentials', true)
+    res.header('Access-Control-Allow-Origin', originAllowed)
+    res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
+    res.header('Access-Control-Allow-Headers','Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization')
+    res.header(
+        'Access-Control-Allow-Headers',
+        'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+      )
+    next()
+});
 app.use([
     compression(),
     express.json(),
