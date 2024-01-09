@@ -327,7 +327,7 @@ const GetMessages = async (req, res) => {
 }
 const TestMe = async (req, res) => {
     try {
-        res.json('hello')
+        res.json({message:'hello'})
         console.log('interaction works')
     } catch (error) {
         res.status(500).json({ message: 'error getting messages', error: error.message })
