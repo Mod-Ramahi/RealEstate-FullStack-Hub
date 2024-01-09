@@ -29,7 +29,7 @@ export const SignIn = async (data) => {
 
 export const test = async () => {
     try {
-        const response = await instance.get('/data/test/' ,{withCredentials:true})
+        const response = await instance.get('/data/test' ,{withCredentials:true})
         return response
     }
     catch (error){
