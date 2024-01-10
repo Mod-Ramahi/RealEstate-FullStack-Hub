@@ -69,7 +69,6 @@ const handlePreflight = (req, res, next) => {
     }
 };
 
-// Apply the middleware globally before your routes
 app.use(handlePreflight);
 app.use('api/v1/', router)
 // app.get('/', (req, res) => {
