@@ -8,7 +8,7 @@ const morgan = require('morgan')
 require("dotenv").config()
 
 const app = express();
-const PORT = process.env.PORT||5000;
+const PORT = process.env.PORT || 5000;
 // app.use(cors());
 // app.options("/", (req, res) => {
 //     res.setHeader("Access-Control-Allow-Origin", "https://real-estate-mern-full-stack-ui.vercel.app");
@@ -53,14 +53,24 @@ app.use(bodyParser.json());
 app.use([
     compression(),
     express.json(),
-    express.urlencoded({extended: false})
+    express.urlencoded({ extended: false })
 ])
 
 app.use(morgan('dev'));
-if(process.env.NODE_ENV === 'development'){
+if (process.env.NODE_ENV === 'development') {
 
 };
+const handlePreflight = (req, res, next) => {
+    if (req.method === 'OPTIONS') {
+        // Respond to preflight requests with a 200 status
+        res.status(200).end();
+    } else {
+        next();
+    }
+};
 
+// Apply the middleware globally before your routes
+app.use(handlePreflight);
 app.use('api/v1/', router)
 // app.get('/', (req, res) => {
 //     console.log('check test route')
@@ -68,18 +78,18 @@ app.use('api/v1/', router)
 // })
 const mongooseUrl = process.env.Mongoose_Url;
 mongoose.connect(mongooseUrl, {
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-    retryWrites:true
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    retryWrites: true
 })
-.then(() => console.log('connected to mongoDB'))
-.catch((error) => console.error('error connecting to mongoDB:', error));
+    .then(() => console.log('connected to mongoDB'))
+    .catch((error) => console.error('error connecting to mongoDB:', error));
 
 app.use((req, res, next) => {
     res.status(404).json('bad request')
 });
 app.use((error, req, res, nesxt) => {
-    if(error.status){
+    if (error.status) {
         res.status(error.status).json(error.message)
     } else {
         console.log(error)
@@ -88,16 +98,16 @@ app.use((error, req, res, nesxt) => {
 });
 mongoose.connection.on('connected', () => {
     console.log('MongoDB connected');
-  });
-  
-  mongoose.connection.on('error', (err) => {
+});
+
+mongoose.connection.on('error', (err) => {
     console.error('MongoDB connection error:', err);
-  });
-  
-  mongoose.connection.on('disconnected', () => {
+});
+
+mongoose.connection.on('disconnected', () => {
     console.log('MongoDB disconnected');
-  });
-  
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`)
