@@ -70,7 +70,7 @@ const handlePreflight = (req, res, next) => {
 };
 
 app.use(handlePreflight);
-app.use('api/v1/', router)
+app.use('/api/v1/', router)
 // app.get('/', (req, res) => {
 //     console.log('check test route')
 //     res.send('check test route response')
