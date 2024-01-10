@@ -1,7 +1,7 @@
 {
     "headers": [
       {
-        "source": "/api/v1/(.*)",
+        "source": "/(.*)",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "https://real-estate-mern-full-stack-ui.vercel.app" },
