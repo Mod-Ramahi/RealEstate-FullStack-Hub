@@ -9,10 +9,10 @@ require("dotenv").config()
 
 const app = express();
 const PORT = process.env.PORT||5000;
-app.use(cors({credentials: true}));
+app.use(cors());
 app.use(bodyParser.json());
 
-const originAllowed = '*';
+const originAllowed = 'https://real-estate-mern-full-stack-ui.vercel.app';
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', originAllowed)
     res.header('Access-Control-Allow-Methods','HEAD', 'OPTIONS', 'GET', 'POST', 'PUT', 'DELETE')
@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === 'development'){
 
 };
 
-app.use('https://real-estate-mern-full-stack-ui.vercel.app', router)
+app.use('/api/v1', router)
 const mongooseUrl = process.env.Mongoose_Url;
 mongoose.connect(mongooseUrl, {
     useNewUrlParser:true,
