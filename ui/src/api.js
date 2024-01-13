@@ -2,7 +2,7 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const instance = axios.create({
-    baseURL: 'http://51.20.18.182:5000/api/v1/',
+    baseURL: 'http://51.20.18.182:5000/api/v1',
     // withCredentials: true
 })
 
@@ -165,7 +165,7 @@ export const DeleteAdmin = async (id) => {
 
 export const UiGetData = async (data) => {
     try{
-        const response = await instance.post('/data/uigetdata', data)
+        const response = await instance.post('/data/uigetdata/', data)
         return response
     } catch (error) {
         console.error('the error',error)
