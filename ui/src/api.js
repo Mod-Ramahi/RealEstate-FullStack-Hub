@@ -2,7 +2,7 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const instance = axios.create({
-    baseURL: 'https://real-estate-server-app.vercel.app',
+    baseURL: 'http://51.20.18.182:5000/api/v1',
     // withCredentials: true
 })
 
@@ -25,16 +25,6 @@ export const SignIn = async (data) => {
     } catch (error) {
         console.error(error)
         return error.response
-    }
-}
-
-export const test = async () => {
-    try {
-        const response = await instance.get('/data/test')
-        return response
-    }
-    catch (error){
-        console.error(error)
     }
 }
 
