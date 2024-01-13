@@ -2,7 +2,7 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const instance = axios.create({
-    baseURL: 'http://51.20.18.182:5000/api/v1',
+    baseURL: 'https://51.20.18.182:5000/api/v1',
     // withCredentials: true
 })
 
