@@ -30,11 +30,6 @@ const SearchArea = () => {
         if (currentPage === 1) {
             setPreviousButton(false)
         }
-        test().then((res)=>{
-            console.log(res)
-        }).catch((err) => {
-            console.error(err)
-        })
         const data = { category, location, type, area, price, floor, rooms, furnishing, currentPage }
         UiGetData(data).then((uiData) => {
             const recievedData = uiData.data
