@@ -2,7 +2,7 @@ import axios from "axios";
 import { getItem } from "./localStorage";
 
 const instance = axios.create({
-    baseURL: 'https://real-estate-server-aws-ec2-onrender.onrender.com',
+    baseURL: 'https://real-estate-server-aws-ec2-onrender.onrender.com/api/v1',
     // withCredentials: true
 })
 
