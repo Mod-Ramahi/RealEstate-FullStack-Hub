@@ -99,13 +99,14 @@ const GetData = async (req, res) => {
 
 const UiGetData = async (req, res) => {
     try {
+        console.log('ok')
         const { category, location, type, area, price, rooms, floor, furnishing, currentPage } = req.body;
         console.log(category, location, type)
         const limit = 8;
         const skip = currentPage > 1 ? (currentPage - 1) * limit : 0
 
-        let query = RealEstate.find().sort({ rank: 1, createdAt: -1 }).skip(skip)
-
+        let query = await RealEstate.find().sort({ rank: 1, createdAt: -1 }).skip(skip)
+        console.log('ok11')
         if (category) {
             query = query.where('category').equals(category)
         }
