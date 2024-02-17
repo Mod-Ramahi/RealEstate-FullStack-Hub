@@ -247,16 +247,21 @@ const SearchArea = () => {
                         <button className="filter-buttons" onClick={handleResetFilter}>Reset filters</button>
                     </div>
                     <div className="result-area">
-                        {
-                            noData ?
-                                <span> No results match your search filter</span>
-                                :
-                                <>{
-                                    searchedData.map((data, idx) => (
-                                        <ResultCard key={idx} data={data} />
-                                    ))
-                                }</>
+                        {waitData ? (<span> Please wait (demo web app with free hosting and cloud serveces), or refresh the page</span>)
+                            : (<>
+                                {
+                                    noData ?
+                                        <span> No results match your search filter</span>
+                                        :
+                                        <>{
+                                            searchedData.map((data, idx) => (
+                                                <ResultCard key={idx} data={data} />
+                                            ))
+                                        }</>
+                                }
+                            </>)
                         }
+
                         {/* <ResultCard />
                         <ResultCard />
                         <ResultCard />
@@ -276,7 +281,7 @@ const SearchArea = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     )
 }
 
