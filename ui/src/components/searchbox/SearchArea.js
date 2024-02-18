@@ -24,6 +24,7 @@ const SearchArea = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const [noData, setNoData] = useState(false)
     const [searchedData, setSearchedData] = useState([])
+    const [waitData, setWaitData] = useState(true);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -32,8 +33,11 @@ const SearchArea = () => {
         }
         const data = { category, location, type, area, price, floor, rooms, furnishing, currentPage }
         UiGetData(data).then((uiData) => {
+            console.log('1')
             const recievedData = uiData.data
             setSearchedData(recievedData)
+            setWaitData(false);
+            console.log('2')
             console.log('recieved:', recievedData)
             if (recievedData.length === 0) {
                 setNextButton(false)
@@ -48,7 +52,7 @@ const SearchArea = () => {
         }).catch((error) => {
             console.error(error)
         })
-    }, [category, location, type, area, price, floor, rooms, furnishing, currentPage])
+    }, [category, location, type, area, price, floor, rooms, furnishing, currentPage, waitData])
 
     const handleLinkClick = (eventKey) => {
         setActiveOption(eventKey)
