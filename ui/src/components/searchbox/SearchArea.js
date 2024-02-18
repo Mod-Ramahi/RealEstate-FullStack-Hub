@@ -251,7 +251,7 @@ const SearchArea = () => {
                         <button className="filter-buttons" onClick={handleResetFilter}>Reset filters</button>
                     </div>
                     <div className="result-area">
-                        {waitData ? (<span> Please wait (demo web app with free hosting and cloud serveces), or refresh the page</span>)
+                        {waitData ? (<span> Please wait (demo web app with free hosting and cloud serveces. client and server are located in different geographic regions). or try refresh the page</span>)
                             : (<>
                                 {
                                     noData ?
